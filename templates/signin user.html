@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Sign In Form Paradise Housing Management</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/signin.css'%}">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="{{linke1}}"><img src="{% static 'assets/logo.png'%}"></a>
+      </div>
+      <ul>
+        <li><a href="{{linke1}}">Home</a></li>
+        <li><a href="#">Customer review</a></li>
+        <li><a href="{{linke2}}">About Us</a></li>
+        <li><a href="{{linke3}}">Contact</a></li>
+      </ul>
+    </header>
+
+  <div class="signin">
+   <h1>Sign In</h1>
+  <form  action="login" method="post">
+     {% csrf_token %}
+     {{ form.as_p }}
+    <input type="text" name="username" class="input-box" placeholder="Your username">
+    <input type="password" name='password' class="input-box" placeholder="Your Password">
+      
+    <button type="Submit" class="signinbtn">
+    Submit
+    </button>
+    <hr>
+    <p>Don't have an account?  <a href="{{linke}}">Get Started</a></p>
+
+   </form>
+
+  </div>
+  <div>
+        {% for message in messages %}
+        <h3> {{message}}  </h3>
+        {% endfor %}
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,65 @@
+{% load static %}
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaint</title>
+  <link rel="stylesheet" href="{% static 'CSS/complaint.css'%}">
+<link rel="stylesheet" type="text/css" >
+</head>
+<body>
+    <header>
+      <div class="logo">
+        <a href="{{linkcom1}}"><img src="{% static 'assets/logo.png'%}"></a>
+      </div>
+
+    </header>
+  <section class="contact">
+    <div class="content">
+      <h2>Complaints</h2>
+    </div>
+    <div class="container">
+      <div class="contactInfo">
+        <div class="box">
+          <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+
+        </div>
+
+            <div class="box">
+              <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+
+            </div>
+
+                <div class="box">
+                  <div class="icon"><i class="fa fa-mobile" aria-hidden="true"></i></div>
+
+                </div>
+                {% if message_name %}
+    <center>
+      <h2>Thanks {{ message_name }}!</h2>
+      <p>We received your email and will respond shortly...</p>
+    </center>
+    <br/><br/><br/>
+  {% else %}
+      </div>
+      <div class="contactForm">
+        <form action="complain" method="post">
+          {% csrf_token %}
+          <h2>Send Complaint</h2>
+          <div class="inputBox">
+            <input type="text" name="name" class="input-box" placeholder="Your name">
+            <input type="email" name="email" class="input-box" placeholder="Your Email">
+            <textarea name="message" required="required"></textarea>
+            <span>Type Your Complain</span>
+          </div>
+          <div class="inputBox">
+            <input type="submit" name=""value="Send">
+
+          </div>
+        </form>
+      </div>
+    </div>
+    </section>
+
+  </body>
+  </html>
+  {% endif %}

@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Sign In Form Paradise Housing Management</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/getstarted1.css'%}">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html"><img src="{% static 'assets/logo.png'%}"></a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Customer review</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+
+  <div class="signin">
+   <h1>Welcome to Community One</h1>
+  <form>
+    <input type="text" class="input-box" placeholder="Your Name">
+    <input type="email" class="input-box" placeholder="Your Email">
+    <input type= "number" class="input-box" placeholder="Your Mobile number">
+    <label for="select">Select</label>
+    <select id="select">
+      <option disabled selected="select">Tenant/Owner</option>
+      <option value="Owner">Owner</option>
+      <option value="Tenant">Tenant</option>
+    </select>
+    <select id="select">
+      <option disabled selected="select">Your Block No.</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+    </select>
+    <select id="select">
+      <option disabled selected="select">Your Unit No.</option>
+      <option value="101">101</option>
+      <option value="504">504</option>
+      <option value="403">403</option>
+      <option value="601">601</option>
+      <option value="302">302</option>
+      <option value="205">205</option>
+    </select>
+    <p>To get access to a Community on Paradise, you need to verify your address. Please make sure you enter the correct Block and Unit No.</p>
+    <p><span><input type="checkbox"></span>I agree to the terms and services.</p>
+    <button type="button" class="signinbtn">REGISTER</button>
+    <hr>
+    <p>Already have an account?  <a href="{{linkg1s}}">Sign In</a></p>
+
+   </form>
+
+  </div>
+
+  </body>
+</html>

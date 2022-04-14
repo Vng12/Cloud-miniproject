@@ -1,0 +1,46 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Paradise Housing Management System</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'CSS/styleget.css'%}">
+</head>
+<body>
+
+  <header>
+    
+        
+    
+    <div class="main">
+      <div class="logo">
+        <a href="{{linkg1}}"><img src="{% static 'assets/logo.png'%}"></a>
+      </div>
+      <ul>
+        <li class="active"><a class="navbar" href="#">Home</a></li>
+        <li><a class="navbar" href="{%url 'notice'%}">View Notices and Reminders</a></li>
+        <li><a class="navbar" href="{%url 'security'%}">Manage visitors</a></li>
+        <li><a class="navbar" href="{%url 'complain'%}" target="blank">Complaints</a></li>
+        
+        {% if user.is_authenticated %}
+        
+        <li><a class="navbar" href="accounts/logout">Log out</a></li>
+        <li style="position:center; left:60x; top:6px;color:white"> Hello, {{user.first_name}}</li>
+       {% else %}
+        
+        <li><a class="navbar" href="accounts/login">Log in</a></li>
+        <h2 style="position:center;top:10px;left:60px;color:red">You are not logged in</h2>
+        {% endif %}
+      </ul>
+    </div>
+    
+    <div class="title">
+      <h1>Paradise Housing Management</h1>
+    </div>
+     
+    
+ 
+
+  </header>
+
+</body>
+</html>

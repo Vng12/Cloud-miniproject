@@ -1,0 +1,78 @@
+{% load static %}
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/stylecontact.css'%}"
+</head>
+<body>
+  <section class="contact">
+    <div class="content">
+      <h2>Contact Us</h2>
+      <p>Here you can contact us</p>
+    </div>
+    <div class="container">
+      <div class="contactInfo">
+        <div class="box">
+          <div class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
+          <div class="text">
+            <h3 style="color: red">Address</h3>
+            <p style="color: red">408,D Wing, Paradise Apartment,<br> Dombivali East, Thane-421203 </p>
+
+          </div>
+        </div>
+        
+            <div class="box">
+              <div class="icon"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+              <div class="text">
+                <h3 style="color: red">Email</h3>
+                <p style="color: red">soumyojyoti.datta@gmail.com </p>
+
+              </div>
+            </div>
+
+                <div class="box">
+                  <div class="icon"><i class="fa fa-mobile" aria-hidden="true"></i></div>
+                  <div class="text">
+                    <h3 style="color: red">Phone</h3>
+                    <p style="color: red">+91 8436965432 </p>
+
+                  </div>
+                </div>
+      </div>
+       {% if contact_name %}
+         <center>
+      <h2>Thanks {{ contact_name }}!</h2>
+      <p>We have received your email and will respond shortly...</p>
+    </center>
+    {% else %}
+
+      <div class="contactForm">
+        <form action="contact" method="post">
+          {% csrf_token %}
+          <h2 >Send Message</h2>
+          <div class="inputBox">
+            <input type="text" name="c_name"required="required">
+            <span>Full Name</span>
+          </div>
+          <div class="inputBox">
+            <input type="Email" name="c_mail"required="required">
+            <span>Email</span>
+          </div>
+          <div class="inputBox">
+            <textarea name="c_message" required="required"></textarea>
+            <span>Type Your Message</span>
+          </div>
+          <div class="inputBox">
+            <input type="submit" name=""value="Send">
+
+          </div>
+        </form>
+      </div>
+    </div>
+    </section>
+
+  </body>
+  </html>
+{% endif %}

@@ -1,0 +1,41 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Paradise Housing Management System</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/notice.css'%}">
+  </head>
+  <body>
+    <header>
+      <div class="main">
+        <div class="logo">
+          <a href="{%url 'user_home'%}"><img src="{% static 'assets/logo.png'%}"></a>
+        </div>
+        <ul>
+          <li><a href="{%url 'user_home'%}">Home</a></li>
+          
+          <li ><a href="{%url 'notice'%}">View Notices and Reminders</a></li>
+          <li><a href="{%url 'complain'%}">Complaints</a></li>
+          <li class="active"><a href="#">Manage Visitors</a></li>
+          
+        
+      </div>
+      
+        <h2>Visitor's Book</h2>
+      
+      
+      <ol >
+        {% for security in object_list %}
+        <li > {{security}}</li>
+        {% endfor %}
+   
+    </ol>
+    
+      
+      
+
+  </header>
+ 
+
+  </body>
+</html>

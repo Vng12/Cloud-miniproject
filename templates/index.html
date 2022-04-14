@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Paradise Housing Management System</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/style.css'%}">
+  </head>
+  <body>
+    <header>
+      <div class="main">
+        <div class="logo">
+          <a href="{{link}}"><img src="{% static 'assets/logo.png'%}"></a>
+        </div>
+        <ul>
+          <li class="active"><a href="{{link}}">Home</a></li>
+          <li><a href="{{link5}}" target="blank">Admin Panel</a></li>
+          <li><a href="{% url 'about-us' %}">About Us</a></li>
+          <li><a href="{{link1}}" target="blank">Contact</a></li>
+        </ul>
+      </div>
+      <div class="title">
+        <h1>Paradise Housing Management</h1>
+      </div>
+      <div class="button">
+        <a href="{{link3}}" class="btn">SIGN IN</a>
+        <a href="{{link4}}" class="btn">GET STARTED</a>
+      </div>
+
+
+    </header>
+    
+  </body>
+</html>

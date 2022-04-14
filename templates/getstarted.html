@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Sign Up Form Paradise Housing Management</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/getstarted1.css'%}">
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html"><img src="{% static 'assets/logo.png'%}"></a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Customer review</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+
+  <div class="signin">
+   <h1>Welcome to Registration Page</h1>
+  <form action="register" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" class="input-box" placeholder="username">
+    <input type="text" name="first_name" class="input-box" placeholder="First Name">
+    <input type="text" name="last_name" class="input-box" placeholder="Last Name">
+    <input type="email" name="email" class="input-box" placeholder="Your Email">
+    <input type= "number" name="mobile" class="input-box" placeholder="Your Mobile number">
+    <input type="password" name="password1" class="input-box" placeholder="Enter your password">
+    <input type="password" name="password2" class="input-box" placeholder="confirm password">
+    
+    <input type="text" name="tenantorowner" class="input-box" placeholder="Are you owner or tenant?">
+    <input type="text" name="block" class="input-box" placeholder="Block No.">
+    <input type="text" name="flat" class="input-box" placeholder="Flat no.">
+    <p>To get access to a Community on Paradise, you need to verify your address. Please make sure you enter the correct Block and Unit No.</p>
+    <p><span><input type="checkbox"></span>I agree to the terms and services.</p>
+    <button type="Submit" class="signinbtn">REGISTER</button>
+    <hr>
+    <p>Already have an account?  <a href="{{linkg1s}}">Sign In</a></p>
+
+   </form>
+
+  </div>
+<div>
+ 
+</div>
+  </body>
+</html>
